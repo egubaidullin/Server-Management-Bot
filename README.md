@@ -1,6 +1,6 @@
 # Server-Management-Bot
 
-Server-Management-Bot is a Telegram bot designed to manage servers and execute commands remotely over SSH (only passwords). It allows authorized users to add, delete, and list servers, as well as execute predefined commands or manually enter commands. The bot currently only supports passwords and usernames for server authentication. SSL key support is planned for a future update.
+Server-Management-Bot is a Telegram bot designed to manage servers and execute commands remotely over SSH. It allows authorized users to add, delete, and list servers, as well as execute predefined commands or manually enter commands. The bot currently only supports passwords and usernames for server authentication. SSL key support is planned for a future update.
 
 ## Dependencies
 
