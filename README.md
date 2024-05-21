@@ -5,7 +5,7 @@ Server-Management-Bot is a Telegram bot designed to manage servers and execute c
 ## Dependencies
 
 - Python 3.7+
-- aiogram
+- aiogram 3.6.0
 - aiosqlite
 - cryptography
 - fabric
