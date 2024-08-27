@@ -1,10 +1,10 @@
 {
   "admin": {
-    "users": [1498134367],
+    "users": [telegram_id_1],
     "commands": []
   },
   "user_btn_access": {
-    "users": [422876902],
+    "users": [telegram_id_2],
     "commands": ["/start", "/list_servers", "/execute_command", "uptime", "df -h"]
   }
 }
