@@ -1,0 +1,5 @@
+aiogram==3.12.0
+aiosqlite==0.20.0
+cryptography==43.0.0
+Fabric==3.2.2
+python-dotenv==1.0.1
