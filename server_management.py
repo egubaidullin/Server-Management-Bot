@@ -19,6 +19,15 @@ class ServerForm(StatesGroup):
 class DeleteServerForm(StatesGroup):
     server_id = State()
 
+async def cmd_list_servers(message: types.Message):
+    async with aiosqlite.connect('bot.db') as db:
+        async with db.execute('SELECT id, name, ip FROM servers') as cursor:
+            servers = await cursor.fetchall()
+            if servers:
+                server_list = "\n".join([f"{i+1}. {row[1]} ({row[2]})" for i, row in enumerate(servers)])
+                await message.reply(f"Available servers:\n{server_list}")
+            else:
+                await message.reply("No servers found.")
 async def cmd_delete_server(message: types.Message, state: FSMContext):
     async with aiosqlite.connect('bot.db') as db:
         async with db.execute('SELECT id, name, ip FROM servers') as cursor:
@@ -117,6 +126,7 @@ async def process_password(message: types.Message, state: FSMContext):
         await message.reply("Failed to add server. Please try again later.")
 
 def register_handlers_server_management(dp: Dispatcher):
+    dp.message.register(cmd_list_servers, Command(commands='list_servers'))
     dp.message.register(cmd_add_server, Command(commands='add_server'))
     dp.message.register(cmd_delete_server, Command(commands='delete_server'))
     dp.message.register(process_name, ServerForm.name)

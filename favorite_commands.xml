@@ -1,0 +1,30 @@
+<commands>
+    <category name="System">
+        <command>
+            <name>uname -a</name>
+            <description>Show system information</description>
+        </command>
+        <command>
+            <name>df -h</name>
+            <description>Free Disk Space</description>
+        </command>
+        <command>
+            <name>uptime</name>
+            <description>Uptime</description>
+        </command>
+    </category>
+    <category name="Network">
+        <command>
+            <name>nginx -t</name>
+            <description>Check nginx config</description>
+        </command>
+        <command>
+            <name>nginx -s reload</name>
+            <description>Reload nginx config</description>
+        </command>
+        <command>
+            <name><![CDATA[nginx -T | grep "server_name " | sed 's/.*server_name \(.*\);/\1/' | sed 's/ /\n/g' | tr -d ' ' | sed '/\.\*/s/\.\*/\n&/' | grep -v '^*.' | sed 's/^www\.//' | sort -u | grep -v 'nginx' | grep -v '^$']]></name>
+            <description>Websites list</description>
+        </command>
+    </category>
+</commands>
